@@ -1,0 +1,30 @@
+### Recuperar información de los servicios
+GET http://localhost:1234/
+
+### Recuperar información de un servicio
+GET http://localhost:1234/2
+
+### Para crear un servicio
+POST http://localhost:1234/
+Content-Type: application/json
+
+{
+  "fecha": "20/10/202",
+  "duenio": "Daniel",
+  "marca": "Renault",
+  "modelo": "Clio",
+  "patente": "AB-234-CD",
+  "servicio": "Tren delantero",
+  "descripcion": "Debe $2000",
+  "costo_repuestos": 320000,
+  "costo_repuestos_total": 380000,
+  "costo_mano_de_obra": 200000
+}
+
+### Actualizar un servicio
+PATCH http://localhost:1234/1
+Content-Type: application/json
+
+{
+  "costo": 10000
+}
