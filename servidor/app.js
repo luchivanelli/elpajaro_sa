@@ -34,16 +34,13 @@ app.use(
         'http://localhost:8080',
         'http://localhost:1234',
         'http://127.0.0.1:5500',
-        "http://localhost:5173",
-        "https://elpajaro-sa.vercel.app",
-        "https://elpajaro-sa-backend.vercel.app"
+        'http://localhost:5173',
+        'https://elpajaro-sa.vercel.app',         // Frontend en producción
+        'https://elpajaro-sa-backend.vercel.app'  // Backend en producción
       ];
 
-      if (ACCEPTED_ORIGINS.includes(origin)) {
-        return callback(null, true);
-      }
-
-      if (!origin) {
+      // Permitir sin restricciones cuando no hay un origen especificado (útil en pruebas locales)
+      if (!origin || ACCEPTED_ORIGINS.includes(origin)) {
         return callback(null, true);
       }
 
