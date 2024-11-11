@@ -11,12 +11,16 @@ const pool = mysql2.createPool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   port: process.env.DB_PORT,
+  // host: 'localhost',
+  // database: 'todolist',
+  // user: 'root',
+  // password: 'root',
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
 });
 
-const PORT = process.env.PORT ?? 1234;
+const PORT = process.env.BACKEND_URL ?? 1234;
 
 const app = express();
 app.disable('x-powered-by');
@@ -30,7 +34,8 @@ app.use(
         'http://localhost:8080',
         'http://localhost:1234',
         'http://127.0.0.1:5500',
-        "http://localhost:5173"
+        "http://localhost:5173",
+        BACKEND_URL
       ];
 
       if (ACCEPTED_ORIGINS.includes(origin)) {
