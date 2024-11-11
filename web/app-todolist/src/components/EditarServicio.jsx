@@ -56,7 +56,7 @@ export const EditarServicio = ({ servicio }) => {
         } else {
             setMessage('');
 
-            fetch(`http://localhost:1234/${servicio.id}`, {
+            fetch(`https://elpajaro-sa-backend.vercel.app/${servicio.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

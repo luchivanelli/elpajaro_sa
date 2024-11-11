@@ -5,7 +5,7 @@ export const handleModal = (id)=> {
 }
 
 export const getServicios = ()=> {
-    fetch('http://localhost:1234/')
+    fetch('https://elpajaro-sa-backend.vercel.app/')
     .then(res => res.json())
     .then(data => {
         return data

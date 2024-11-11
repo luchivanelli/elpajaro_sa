@@ -21,7 +21,7 @@ export const Lista = () => {
     
     useEffect(() => {
         if (bandera) {
-            fetch(`http://localhost:1234/${servicio.id}`, {
+            fetch(`https://elpajaro-sa-backend.vercel.app/${servicio.id}`, {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
